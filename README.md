@@ -5,6 +5,11 @@
 
 The React library offers components like `<AudioPlayer/>`, `<Audio/>`, and `<AudioStream/>` for versatile audio playback, visualization, and streaming, including support for dynamic and static visualizations. Its hooks, such as `useAudio`, `useCanvas`, and `detectNotes`, provide comprehensive audio handling, canvas management, and musical note detection features.
 
+# Installation
+
+```javascript
+  npm install react-audio-canvas
+```
 
 # Components
 
