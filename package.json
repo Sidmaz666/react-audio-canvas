@@ -1,9 +1,9 @@
 {
   "name": "react-audio-canvas",
-  "version": "0.0.0",
+  "version": "0.1.0",
   "author": "Sidmaz666",
   "description": "A React library for audio visualizations",
-    "keywords": [
+  "keywords": [
     "react",
     "react-component",
     "audio",
