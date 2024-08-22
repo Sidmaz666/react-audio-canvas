@@ -1,6 +1,6 @@
 {
   "name": "react-audio-canvas",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "author": "Sidmaz666",
   "description": "A React library for audio visualizations",
   "keywords": [
@@ -57,4 +57,3 @@
   },
   "homepage": "https://github.com/Sidmaz666/react-audio-canvas#readme"
 }
-
