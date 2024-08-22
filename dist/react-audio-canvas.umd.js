@@ -1,4 +1,4 @@
-(function(H,h){typeof exports=="object"&&typeof module<"u"?h(exports,require("react")):typeof define=="function"&&define.amd?define(["exports","react"],h):(H=typeof globalThis<"u"?globalThis:H||self,h(H["react-audio-visualizer"]={},H.React))})(this,function(H,h){"use strict";var Pe={exports:{}},be={};/**
+(function(H,h){typeof exports=="object"&&typeof module<"u"?h(exports,require("react")):typeof define=="function"&&define.amd?define(["exports","react"],h):(H=typeof globalThis<"u"?globalThis:H||self,h(H["react-audio-canvas"]={},H.React))})(this,function(H,h){"use strict";var Pe={exports:{}},be={};/**
  * @license React
  * react-jsx-runtime.production.min.js
  *

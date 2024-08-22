@@ -5,8 +5,9 @@ export default defineConfig({
   plugins: [react()],
   build: {
     lib: {
-      entry: 'src/main.jsx',
+      entry: 'src/main.jsx', 
       name: 'react-audio-canvas',
+      formats: ['es', 'cjs', 'umd'],
       fileName: (format) => `react-audio-canvas.${format}.js`,
     },
     rollupOptions: {
@@ -19,4 +20,8 @@ export default defineConfig({
       },
     },
   },
+  esbuild: {
+    jsxInject: `import React from 'react'`, 
+  },
 });
+

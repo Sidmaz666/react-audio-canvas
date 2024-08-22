@@ -20,12 +20,12 @@
     "react audio hook",
     "canvas"
   ],
-  "main": "dist/react-audio-visuals.umd.js",
-  "module": "dist/react-audio-visuals.es.js",
+  "main": "dist/react-audio-canvas.cjs.js",
+  "module": "dist/react-audio-canvas.es.js",
   "exports": {
     ".": {
-      "import": "./dist/react-audio-visuals.es.js",
-      "require": "./dist/react-audio-visuals.umd.js"
+      "import": "./dist/react-audio-canvas.es.js",
+      "require": "./dist/react-audio-canvas.cjs.js"
     }
   },
   "files": [
@@ -57,3 +57,4 @@
   },
   "homepage": "https://github.com/Sidmaz666/react-audio-canvas#readme"
 }
+
