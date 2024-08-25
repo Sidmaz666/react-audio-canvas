@@ -41,6 +41,7 @@ async function getAudioFrequencyData(source, fft) {
 
     const audioContext = new (window.AudioContext || window.webkitAudioContext)();
     const audioBuffer = await audioContext.decodeAudioData(arrayBuffer);
+    const unsupported_data = await getAudioFrequencyDataRealTime(audioBuffer, audioContext ,fft)
     const offlineContext = new OfflineAudioContext(
         audioBuffer.numberOfChannels,
         audioBuffer.length,
@@ -59,8 +60,48 @@ async function getAudioFrequencyData(source, fft) {
     for (let i = 0; i < Math.ceil(audioBuffer.duration); i++) {
         analyser.getFloatFrequencyData(dataArray.subarray(i * bufferLength, (i + 1) * bufferLength));
     }
-    return { dataArray, audioDuration: audioBuffer.duration };
+    const hasValidData = dataArray.some(value => value !== -Infinity);
+    if (!hasValidData) {
+        console.warn('AnalyserNode data contains only -Infinity values. This may indicate an issue with the audio data or configuration.');
+    	 return unsupported_data
+    } else {
+	return { dataArray, audioDuration: audioBuffer.duration };
+    }
 }
+
+
+async function getAudioFrequencyDataRealTime(audioBuffer, audioContext, fft) {
+    const sourceNode = audioContext.createBufferSource();
+    sourceNode.buffer = audioBuffer;
+    const analyser = audioContext.createAnalyser();
+    analyser.fftSize = fft;
+    const bufferLength = analyser.frequencyBinCount;
+    const dataArray = new Float32Array(bufferLength);
+
+    sourceNode.connect(analyser);
+    sourceNode.start();
+    sourceNode.playbackRate.value = 10;
+
+    return new Promise((resolve, reject) => {
+        const checkInterval = 100;
+        const maxRetries = 20;
+        let retries = 0;
+
+        function updateData() {
+            analyser.getFloatFrequencyData(dataArray);
+            const hasValidData = dataArray.some(value => value !== -Infinity);
+            if (hasValidData || retries >= maxRetries) {
+                sourceNode.stop();
+                resolve({ dataArray, audioDuration: audioBuffer.duration });
+            } else {
+                retries++;
+                setTimeout(updateData, checkInterval);
+            }
+        }
+        updateData();
+    });
+}
+
 
 export default function useAudio(src, fftSize = 64, detector = false) {
   const [isPlaying, setPlaying] = useState(false);
