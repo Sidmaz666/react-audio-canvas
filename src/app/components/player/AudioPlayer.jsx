@@ -1,4 +1,4 @@
-import { useEffect, cloneElement } from "react";
+import { useEffect, cloneElement, useState } from "react";
 import useAudio from "../../utils/useAudio";
 import useCanvas from "../../utils/useCanvas";
 import Animation from "../../utils/visualizer/player/Animation";
@@ -59,6 +59,7 @@ export default function AudioPlayer({
     width,
     height,
   });
+  const [trackTime,setTrackTime] = useState(formatTime(audioCurrentTime ? audioCurrentTime : 0))
 
   const CustomStopButton = () => {
     	if(!customStopButton) return;
@@ -148,6 +149,13 @@ export default function AudioPlayer({
 	if(customFunction) customFunction({audioNode,audioDuration, dataArray, bufferLength})
   },[customFunction, audioNode, audioDuration, dataArray, bufferLength])
 
+
+  useEffect(() => {
+    	if(!audioCurrentTime) return
+	setTrackTime(formatTime(audioCurrentTime ? audioCurrentTime : 0))
+  },[audioCurrentTime])
+
+
   return (
     <div className={className ? className : ""} style={style ? style : {}}>
       <Canvas
@@ -189,7 +197,7 @@ export default function AudioPlayer({
 	  enableCurrentTime ? (
 	    <p className={currentTimeClassName ? currentTimeClassName : ""} 
 	    style={currentTimeStyle ? currentTimeStyle : {}}>
-	    	{formatTime(audioCurrentTime ? audioCurrentTime : 0)}
+	    	{trackTime}
 	    </p>
 	  ) : null
 	}
