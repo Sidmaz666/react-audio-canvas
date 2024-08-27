@@ -13,7 +13,8 @@ export function DrawAnimation({
   color="white",
   colorFunction,
   audioDuration=0,
-  type
+  type,
+  audioNode
 }) {
     if (
       (type == "player" && !isPlaying) ||
@@ -43,7 +44,8 @@ export function DrawAnimation({
 	audioDuration,
 	dataArray,
 	bufferLength,
-	canvasNode
+	canvasNode,
+	audioNode
       });
       requestAnimationFrame(animate);
     }
@@ -61,6 +63,7 @@ export function DrawStatic({
   color="white",
   colorFunction,
   audioDuration=0,
+  audioNode,
 }){
     if (
       audioFrequencyData == null
@@ -72,6 +75,6 @@ export function DrawStatic({
     canvasContext.clearRect(0, 0, canvasNode.width, canvasNode.height);
     visualizer({
       dataArray:audioFrequencyData,barHeight,barWidth,canvasContext,x,
-      color, colorFunction, audioDuration, canvasNode
+      color, colorFunction, audioDuration, canvasNode, audioNode
     });
 }

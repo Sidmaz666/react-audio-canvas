@@ -54,7 +54,7 @@ The `<AudioPlayer/>` component is a customizable audio player with various optio
 | **horizontalOffset** | `0`            | `number` - Horizontal offset for the visualizer drawing.                                                                                                                               |
 | **color**           | `"black"`       | `string` - Default color for the visualizer bars.                                                                                                                                      |
 | **colorFunction**   | `false`         | `function` - Custom function to determine the color of each bar. Example: `({barHeight, barWidth, index, dataArray, audioDuration}) => { return ``rgb(${barHeight * index},0,0)``; }`.                                                                       |
-| **customVisualizer** | `false`        | `function` - Custom visualizer function. Example: `({barHeight,barWidth, canvasContext,x,color,colorFunction, audioDuration, dataArray, bufferLength, canvasNode }) => { canvasContext.fillRect(x, y, width, height); }`.                                                                       |
+| **customVisualizer** | `false`        | `function` - Custom visualizer function. Example: `({barHeight,barWidth, canvasContext,x,color,colorFunction, audioDuration, dataArray, bufferLength, canvasNode, audioNode }) => { canvasContext.fillRect(x, y, width, height); }`.                                                                       |
 | **customFunction**  | `false`         | `function` - Custom function that receives audio data. Example: `({audioNode,audioDuration, dataArray, bufferLength}) => { console.log({audioNode,audioDuration, dataArray, bufferLength}); }`.                                                                                 |
 
 ## Example Usage
@@ -203,7 +203,7 @@ Props
 | **horizontalOffset** | `0` | `number` - Horizontal offset for the visualizer drawing. |
 | **color** | `"black"` | `string` - Default color for the visualizer bars. |
 | **colorFunction** | `false` | `function` - Custom function to determine the color of each bar. Example: `({barHeight, barWidth, index, dataArray, audioDuration}) => { return ``rgb(${barHeight * index},0,0)``; }`. |
-| **customVisualizer** | `false` | `function` - Custom visualizer function. Example: `({barHeight,barWidth, canvasContext,x,color,colorFunction, audioDuration, dataArray, bufferLength, canvasNode }) => { canvasContext.fillRect(x, y, width, height); }`. |
+| **customVisualizer** | `false` | `function` - Custom visualizer function. Example: `({barHeight,barWidth, canvasContext,x,color,colorFunction, audioDuration, dataArray, bufferLength, canvasNode, audioNode }) => { canvasContext.fillRect(x, y, width, height); }`. |
 | **customFunction** | `false` | `function` - Custom function that receives audio data. Example: `({audioNode,audioFrequencyData,audioDuration}) => { console.log({audioNode,audioFrequencyData,audioDuration}); }`. |
 
 ## Example Usage
@@ -341,7 +341,7 @@ Props
 | **horizontalOffset** | `0` | `number` - Horizontal offset for the visualizer drawing. |
 | **color** | `"black"` | `string` - Default color for the visualizer bars. |
 | **colorFunction** | `false` | `function` - Custom function to determine the color of each bar. Example: `({barHeight, barWidth, index, dataArray, audioDuration}) => { return \`rgb(${barHeight * index},0,0)`; }`. |
-| **customVisualizer** | `false` | `function` - Custom visualizer function. Example: `({barHeight, barWidth, canvasContext, x, color, colorFunction, audioDuration, dataArray, bufferLength, canvasNode }) => { canvasContext.fillRect(x, y, width, height); }`. |
+| **customVisualizer** | `false` | `function` - Custom visualizer function. Example: `({barHeight, barWidth, canvasContext, x, color, colorFunction, audioDuration, dataArray, bufferLength, canvasNode, audioNode }) => { canvasContext.fillRect(x, y, width, height); }`. |
 | **customFunction** | `false` | `function` - Custom function that receives audio data. Example: `({audioNode,microphoneSource, mediaStream}) => { console.log({audioNode,microphoneSource, mediaStream}); }`. |
 
 ## Example Usage

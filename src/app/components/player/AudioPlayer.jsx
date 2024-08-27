@@ -108,7 +108,8 @@ export default function AudioPlayer({
         x: horizontalOffset,
         visualizer: customVisualizer,
 	type: "player",
-	audioDuration
+	audioDuration,
+	audioNode
       });
     } else {
       Animation({
@@ -124,7 +125,8 @@ export default function AudioPlayer({
 	barHeight,
 	x: horizontalOffset,
 	type: "player",
-	audioDuration
+	audioDuration,
+	audioNode
       });
     }
   }, [
@@ -142,7 +144,8 @@ export default function AudioPlayer({
     customVisualizer,
     disableVolume,
     setVolume,
-    audioDuration
+    audioDuration,
+    audioNode,
   ]);
 
   useEffect(() => {

@@ -80,7 +80,8 @@ export default function AudioStream({
         barHeight,
         x: horizontalOffset,
         visualizer: customVisualizer,
-	type: "stream"
+	type: "stream",
+	audioNode:microphoneSource,
       });
     } else {
       Animation({
@@ -95,7 +96,8 @@ export default function AudioStream({
 	barWidth,
 	barHeight,
 	x: horizontalOffset,
-	type: "stream"
+	type: "stream",
+	audioNode:microphoneSource,
       });
     }
   }, [
@@ -111,6 +113,7 @@ export default function AudioStream({
     barHeight,
     horizontalOffset,
     customVisualizer,
+    microphoneSource,
   ]);
 
   useEffect(() => {

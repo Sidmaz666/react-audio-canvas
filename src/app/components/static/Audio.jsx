@@ -102,7 +102,8 @@ export default function Audio({
         barHeight,
         x: horizontalOffset,
         visualizer: customVisualizer,
-	audioDuration
+	audioDuration,
+	audioNode,
       });
     } else {
       Static({
@@ -114,7 +115,8 @@ export default function Audio({
 	barWidth,
 	barHeight,
 	x: horizontalOffset,
-	audioDuration
+	audioDuration,
+	audioNode,
       });
     }
   }, [
@@ -129,7 +131,8 @@ export default function Audio({
     customVisualizer,
     disableVolume,
     setVolume,
-    audioDuration
+    audioDuration,
+    audioNode,
   ]);
 
   useEffect(() => {
