@@ -1,5 +1,5 @@
 import rr, { useState as U, useEffect as se, useRef as Ze, useCallback as xr, cloneElement as be } from "react";
-var $e = { exports: {} }, Ae = {};
+var Ne = { exports: {} }, Ae = {};
 /**
  * @license React
  * react-jsx-runtime.production.min.js
@@ -15,11 +15,11 @@ function br() {
   Qe = 1;
   var a = rr, i = Symbol.for("react.element"), s = Symbol.for("react.fragment"), o = Object.prototype.hasOwnProperty, c = a.__SECRET_INTERNALS_DO_NOT_USE_OR_YOU_WILL_BE_FIRED.ReactCurrentOwner, u = { key: !0, ref: !0, __self: !0, __source: !0 };
   function v(n, l, h) {
-    var d, g = {}, m = null, j = null;
-    h !== void 0 && (m = "" + h), l.key !== void 0 && (m = "" + l.key), l.ref !== void 0 && (j = l.ref);
-    for (d in l) o.call(l, d) && !u.hasOwnProperty(d) && (g[d] = l[d]);
-    if (n && n.defaultProps) for (d in l = n.defaultProps, l) g[d] === void 0 && (g[d] = l[d]);
-    return { $$typeof: i, type: n, key: m, ref: j, props: g, _owner: c.current };
+    var d, m = {}, g = null, j = null;
+    h !== void 0 && (g = "" + h), l.key !== void 0 && (g = "" + l.key), l.ref !== void 0 && (j = l.ref);
+    for (d in l) o.call(l, d) && !u.hasOwnProperty(d) && (m[d] = l[d]);
+    if (n && n.defaultProps) for (d in l = n.defaultProps, l) m[d] === void 0 && (m[d] = l[d]);
+    return { $$typeof: i, type: n, key: g, ref: j, props: m, _owner: c.current };
   }
   return Ae.Fragment = s, Ae.jsx = v, Ae.jsxs = v, Ae;
 }
@@ -36,54 +36,54 @@ var Pe = {};
 var He;
 function wr() {
   return He || (He = 1, process.env.NODE_ENV !== "production" && function() {
-    var a = rr, i = Symbol.for("react.element"), s = Symbol.for("react.portal"), o = Symbol.for("react.fragment"), c = Symbol.for("react.strict_mode"), u = Symbol.for("react.profiler"), v = Symbol.for("react.provider"), n = Symbol.for("react.context"), l = Symbol.for("react.forward_ref"), h = Symbol.for("react.suspense"), d = Symbol.for("react.suspense_list"), g = Symbol.for("react.memo"), m = Symbol.for("react.lazy"), j = Symbol.for("react.offscreen"), A = Symbol.iterator, N = "@@iterator";
-    function ne(e) {
+    var a = rr, i = Symbol.for("react.element"), s = Symbol.for("react.portal"), o = Symbol.for("react.fragment"), c = Symbol.for("react.strict_mode"), u = Symbol.for("react.profiler"), v = Symbol.for("react.provider"), n = Symbol.for("react.context"), l = Symbol.for("react.forward_ref"), h = Symbol.for("react.suspense"), d = Symbol.for("react.suspense_list"), m = Symbol.for("react.memo"), g = Symbol.for("react.lazy"), j = Symbol.for("react.offscreen"), A = Symbol.iterator, q = "@@iterator";
+    function Y(e) {
       if (e === null || typeof e != "object")
         return null;
-      var r = A && e[A] || e[N];
+      var r = A && e[A] || e[q];
       return typeof r == "function" ? r : null;
     }
     var P = a.__SECRET_INTERNALS_DO_NOT_USE_OR_YOU_WILL_BE_FIRED;
-    function _(e) {
+    function x(e) {
       {
         for (var r = arguments.length, t = new Array(r > 1 ? r - 1 : 0), p = 1; p < r; p++)
           t[p - 1] = arguments[p];
-        M("error", e, t);
+        I("error", e, t);
       }
     }
-    function M(e, r, t) {
+    function I(e, r, t) {
       {
-        var p = P.ReactDebugCurrentFrame, x = p.getStackAddendum();
-        x !== "" && (r += "%s", t = t.concat([x]));
+        var p = P.ReactDebugCurrentFrame, b = p.getStackAddendum();
+        b !== "" && (r += "%s", t = t.concat([b]));
         var w = t.map(function(R) {
           return String(R);
         });
         w.unshift("Warning: " + r), Function.prototype.apply.call(console[e], console, w);
       }
     }
-    var Z = !1, G = !1, Q = !1, te = !1, ae = !1, H;
-    H = Symbol.for("react.module.reference");
+    var H = !1, K = !1, ee = !1, te = !1, ae = !1, re;
+    re = Symbol.for("react.module.reference");
     function fe(e) {
-      return !!(typeof e == "string" || typeof e == "function" || e === o || e === u || ae || e === c || e === h || e === d || te || e === j || Z || G || Q || typeof e == "object" && e !== null && (e.$$typeof === m || e.$$typeof === g || e.$$typeof === v || e.$$typeof === n || e.$$typeof === l || // This needs to include all possible module reference object
+      return !!(typeof e == "string" || typeof e == "function" || e === o || e === u || ae || e === c || e === h || e === d || te || e === j || H || K || ee || typeof e == "object" && e !== null && (e.$$typeof === g || e.$$typeof === m || e.$$typeof === v || e.$$typeof === n || e.$$typeof === l || // This needs to include all possible module reference object
       // types supported by any Flight configuration anywhere since
       // we don't know which Flight build this will end up being used
       // with.
-      e.$$typeof === H || e.getModuleId !== void 0));
+      e.$$typeof === re || e.getModuleId !== void 0));
     }
     function ie(e, r, t) {
       var p = e.displayName;
       if (p)
         return p;
-      var x = r.displayName || r.name || "";
-      return x !== "" ? t + "(" + x + ")" : t;
+      var b = r.displayName || r.name || "";
+      return b !== "" ? t + "(" + b + ")" : t;
     }
-    function J(e) {
+    function X(e) {
       return e.displayName || "Context";
     }
     function T(e) {
       if (e == null)
         return null;
-      if (typeof e.tag == "number" && _("Received an unexpected object in getComponentNameFromType(). This is likely a bug in React. Please file an issue."), typeof e == "function")
+      if (typeof e.tag == "number" && x("Received an unexpected object in getComponentNameFromType(). This is likely a bug in React. Please file an issue."), typeof e == "function")
         return e.displayName || e.name || null;
       if (typeof e == "string")
         return e;
@@ -105,17 +105,17 @@ function wr() {
         switch (e.$$typeof) {
           case n:
             var r = e;
-            return J(r) + ".Consumer";
+            return X(r) + ".Consumer";
           case v:
             var t = e;
-            return J(t._context) + ".Provider";
+            return X(t._context) + ".Provider";
           case l:
             return ie(e, e.render, "ForwardRef");
-          case g:
+          case m:
             var p = e.displayName || null;
             return p !== null ? p : T(e.type) || "Memo";
-          case m: {
-            var x = e, w = x._payload, R = x._init;
+          case g: {
+            var b = e, w = b._payload, R = b._init;
             try {
               return T(R(w));
             } catch {
@@ -125,18 +125,18 @@ function wr() {
         }
       return null;
     }
-    var O = Object.assign, q = 0, B, Y, V, K, oe, ee, C;
-    function I() {
+    var O = Object.assign, B = 0, V, W, G, z, oe, D, C;
+    function N() {
     }
-    I.__reactDisabledLog = !0;
-    function D() {
+    N.__reactDisabledLog = !0;
+    function F() {
       {
-        if (q === 0) {
-          B = console.log, Y = console.info, V = console.warn, K = console.error, oe = console.group, ee = console.groupCollapsed, C = console.groupEnd;
+        if (B === 0) {
+          V = console.log, W = console.info, G = console.warn, z = console.error, oe = console.group, D = console.groupCollapsed, C = console.groupEnd;
           var e = {
             configurable: !0,
             enumerable: !0,
-            value: I,
+            value: N,
             writable: !0
           };
           Object.defineProperties(console, {
@@ -149,12 +149,12 @@ function wr() {
             groupEnd: e
           });
         }
-        q++;
+        B++;
       }
     }
     function $() {
       {
-        if (q--, q === 0) {
+        if (B--, B === 0) {
           var e = {
             configurable: !0,
             enumerable: !0,
@@ -162,52 +162,52 @@ function wr() {
           };
           Object.defineProperties(console, {
             log: O({}, e, {
-              value: B
-            }),
-            info: O({}, e, {
-              value: Y
-            }),
-            warn: O({}, e, {
               value: V
             }),
+            info: O({}, e, {
+              value: W
+            }),
+            warn: O({}, e, {
+              value: G
+            }),
             error: O({}, e, {
-              value: K
+              value: z
             }),
             group: O({}, e, {
               value: oe
             }),
             groupCollapsed: O({}, e, {
-              value: ee
+              value: D
             }),
             groupEnd: O({}, e, {
               value: C
             })
           });
         }
-        q < 0 && _("disabledDepth fell below zero. This is a bug in React. Please file an issue.");
+        B < 0 && x("disabledDepth fell below zero. This is a bug in React. Please file an issue.");
       }
     }
-    var X = P.ReactCurrentDispatcher, L;
+    var Z = P.ReactCurrentDispatcher, L;
     function y(e, r, t) {
       {
         if (L === void 0)
           try {
             throw Error();
-          } catch (x) {
-            var p = x.stack.trim().match(/\n( *(at )?)/);
+          } catch (b) {
+            var p = b.stack.trim().match(/\n( *(at )?)/);
             L = p && p[1] || "";
           }
         return `
 ` + L + e;
       }
     }
-    var b = !1, k;
+    var _ = !1, k;
     {
-      var W = typeof WeakMap == "function" ? WeakMap : Map;
-      k = new W();
+      var J = typeof WeakMap == "function" ? WeakMap : Map;
+      k = new J();
     }
     function ue(e, r) {
-      if (!e || b)
+      if (!e || _)
         return "";
       {
         var t = k.get(e);
@@ -215,11 +215,11 @@ function wr() {
           return t;
       }
       var p;
-      b = !0;
-      var x = Error.prepareStackTrace;
+      _ = !0;
+      var b = Error.prepareStackTrace;
       Error.prepareStackTrace = void 0;
       var w;
-      w = X.current, X.current = null, D();
+      w = Z.current, Z.current = null, F();
       try {
         if (r) {
           var R = function() {
@@ -232,47 +232,47 @@ function wr() {
           }), typeof Reflect == "object" && Reflect.construct) {
             try {
               Reflect.construct(R, []);
-            } catch (re) {
-              p = re;
+            } catch (ne) {
+              p = ne;
             }
             Reflect.construct(e, [], R);
           } else {
             try {
               R.call();
-            } catch (re) {
-              p = re;
+            } catch (ne) {
+              p = ne;
             }
             e.call(R.prototype);
           }
         } else {
           try {
             throw Error();
-          } catch (re) {
-            p = re;
+          } catch (ne) {
+            p = ne;
           }
           e();
         }
-      } catch (re) {
-        if (re && p && typeof re.stack == "string") {
-          for (var E = re.stack.split(`
-`), z = p.stack.split(`
-`), S = E.length - 1, F = z.length - 1; S >= 1 && F >= 0 && E[S] !== z[F]; )
-            F--;
-          for (; S >= 1 && F >= 0; S--, F--)
-            if (E[S] !== z[F]) {
-              if (S !== 1 || F !== 1)
+      } catch (ne) {
+        if (ne && p && typeof ne.stack == "string") {
+          for (var E = ne.stack.split(`
+`), Q = p.stack.split(`
+`), S = E.length - 1, M = Q.length - 1; S >= 1 && M >= 0 && E[S] !== Q[M]; )
+            M--;
+          for (; S >= 1 && M >= 0; S--, M--)
+            if (E[S] !== Q[M]) {
+              if (S !== 1 || M !== 1)
                 do
-                  if (S--, F--, F < 0 || E[S] !== z[F]) {
+                  if (S--, M--, M < 0 || E[S] !== Q[M]) {
                     var le = `
 ` + E[S].replace(" at new ", " at ");
                     return e.displayName && le.includes("<anonymous>") && (le = le.replace("<anonymous>", e.displayName)), typeof e == "function" && k.set(e, le), le;
                   }
-                while (S >= 1 && F >= 0);
+                while (S >= 1 && M >= 0);
               break;
             }
         }
       } finally {
-        b = !1, X.current = w, $(), Error.prepareStackTrace = x;
+        _ = !1, Z.current = w, $(), Error.prepareStackTrace = b;
       }
       var _e = e ? e.displayName || e.name : "", ge = _e ? y(_e) : "";
       return typeof e == "function" && k.set(e, ge), ge;
@@ -301,12 +301,12 @@ function wr() {
         switch (e.$$typeof) {
           case l:
             return we(e.render);
-          case g:
+          case m:
             return ce(e.type, r, t);
-          case m: {
-            var p = e, x = p._payload, w = p._init;
+          case g: {
+            var p = e, b = p._payload, w = p._init;
             try {
-              return ce(w(x), r, t);
+              return ce(w(b), r, t);
             } catch {
             }
           }
@@ -321,7 +321,7 @@ function wr() {
       } else
         he.setExtraStackFrame(null);
     }
-    function me(e, r, t, p, x) {
+    function me(e, r, t, p, b) {
       {
         var w = Function.call.bind(de);
         for (var R in e)
@@ -329,14 +329,14 @@ function wr() {
             var E = void 0;
             try {
               if (typeof e[R] != "function") {
-                var z = Error((p || "React class") + ": " + t + " type `" + R + "` is invalid; it must be a function, usually from the `prop-types` package, but received `" + typeof e[R] + "`.This often happens because of typos such as `PropTypes.function` instead of `PropTypes.func`.");
-                throw z.name = "Invariant Violation", z;
+                var Q = Error((p || "React class") + ": " + t + " type `" + R + "` is invalid; it must be a function, usually from the `prop-types` package, but received `" + typeof e[R] + "`.This often happens because of typos such as `PropTypes.function` instead of `PropTypes.func`.");
+                throw Q.name = "Invariant Violation", Q;
               }
               E = e[R](r, R, p, t, null, "SECRET_DO_NOT_PASS_THIS_OR_YOU_WILL_BE_FIRED");
             } catch (S) {
               E = S;
             }
-            E && !(E instanceof Error) && (pe(x), _("%s: type specification of %s `%s` is invalid; the type checker function must return `null` or an `Error` but returned a %s. You may have forgotten to pass an argument to the type checker creator (arrayOf, instanceOf, objectOf, oneOf, oneOfType, and shape all require an argument).", p || "React class", t, R, typeof E), pe(null)), E instanceof Error && !(E.message in ve) && (ve[E.message] = !0, pe(x), _("Failed %s type: %s", t, E.message), pe(null));
+            E && !(E instanceof Error) && (pe(b), x("%s: type specification of %s `%s` is invalid; the type checker function must return `null` or an `Error` but returned a %s. You may have forgotten to pass an argument to the type checker creator (arrayOf, instanceOf, objectOf, oneOf, oneOfType, and shape all require an argument).", p || "React class", t, R, typeof E), pe(null)), E instanceof Error && !(E.message in ve) && (ve[E.message] = !0, pe(b), x("Failed %s type: %s", t, E.message), pe(null));
           }
       }
     }
@@ -362,7 +362,7 @@ function wr() {
     }
     function qe(e) {
       if (Se(e))
-        return _("The provided key is an unsupported type %s. This value must be coerced to a string before before using it here.", Ce(e)), ke(e);
+        return x("The provided key is an unsupported type %s. This value must be coerced to a string before before using it here.", Ce(e)), ke(e);
     }
     var je = P.ReactCurrentOwner, ar = {
       key: !0,
@@ -390,13 +390,13 @@ function wr() {
     function sr(e, r) {
       if (typeof e.ref == "string" && je.current && r && je.current.stateNode !== r) {
         var t = T(je.current.type);
-        Oe[t] || (_('Component "%s" contains the string ref "%s". Support for string refs will be removed in a future major release. This case cannot be automatically converted to an arrow function. We ask you to manually fix this case by using useRef() or createRef() instead. Learn more about using refs safely here: https://reactjs.org/link/strict-mode-string-ref', T(je.current.type), e.ref), Oe[t] = !0);
+        Oe[t] || (x('Component "%s" contains the string ref "%s". Support for string refs will be removed in a future major release. This case cannot be automatically converted to an arrow function. We ask you to manually fix this case by using useRef() or createRef() instead. Learn more about using refs safely here: https://reactjs.org/link/strict-mode-string-ref', T(je.current.type), e.ref), Oe[t] = !0);
       }
     }
     function lr(e, r) {
       {
         var t = function() {
-          Be || (Be = !0, _("%s: `key` is not a prop. Trying to access it will result in `undefined` being returned. If you need to access the same value within the child component, you should pass it as a different prop. (https://reactjs.org/link/special-props)", r));
+          Be || (Be = !0, x("%s: `key` is not a prop. Trying to access it will result in `undefined` being returned. If you need to access the same value within the child component, you should pass it as a different prop. (https://reactjs.org/link/special-props)", r));
         };
         t.isReactWarning = !0, Object.defineProperty(e, "key", {
           get: t,
@@ -407,7 +407,7 @@ function wr() {
     function ur(e, r) {
       {
         var t = function() {
-          Ye || (Ye = !0, _("%s: `ref` is not a prop. Trying to access it will result in `undefined` being returned. If you need to access the same value within the child component, you should pass it as a different prop. (https://reactjs.org/link/special-props)", r));
+          Ye || (Ye = !0, x("%s: `ref` is not a prop. Trying to access it will result in `undefined` being returned. If you need to access the same value within the child component, you should pass it as a different prop. (https://reactjs.org/link/special-props)", r));
         };
         t.isReactWarning = !0, Object.defineProperty(e, "ref", {
           get: t,
@@ -415,7 +415,7 @@ function wr() {
         });
       }
     }
-    var cr = function(e, r, t, p, x, w, R) {
+    var cr = function(e, r, t, p, b, w, R) {
       var E = {
         // This tag allows us to uniquely identify this as a React Element
         $$typeof: i,
@@ -441,13 +441,13 @@ function wr() {
         configurable: !1,
         enumerable: !1,
         writable: !1,
-        value: x
+        value: b
       }), Object.freeze && (Object.freeze(E.props), Object.freeze(E)), E;
     };
-    function fr(e, r, t, p, x) {
+    function fr(e, r, t, p, b) {
       {
-        var w, R = {}, E = null, z = null;
-        t !== void 0 && (qe(t), E = "" + t), or(r) && (qe(r.key), E = "" + r.key), ir(r) && (z = r.ref, sr(r, x));
+        var w, R = {}, E = null, Q = null;
+        t !== void 0 && (qe(t), E = "" + t), or(r) && (qe(r.key), E = "" + r.key), ir(r) && (Q = r.ref, sr(r, b));
         for (w in r)
           de.call(r, w) && !ar.hasOwnProperty(w) && (R[w] = r[w]);
         if (e && e.defaultProps) {
@@ -455,11 +455,11 @@ function wr() {
           for (w in S)
             R[w] === void 0 && (R[w] = S[w]);
         }
-        if (E || z) {
-          var F = typeof e == "function" ? e.displayName || e.name || "Unknown" : e;
-          E && lr(R, F), z && ur(R, F);
+        if (E || Q) {
+          var M = typeof e == "function" ? e.displayName || e.name || "Unknown" : e;
+          E && lr(R, M), Q && ur(R, M);
         }
-        return cr(e, E, z, x, p, je.current, R);
+        return cr(e, E, Q, b, p, je.current, R);
       }
     }
     var De = P.ReactCurrentOwner, Ve = P.ReactDebugCurrentFrame;
@@ -513,7 +513,7 @@ Check the top-level render call using <` + t + ">.");
           return;
         Ge[t] = !0;
         var p = "";
-        e && e._owner && e._owner !== De.current && (p = " It was passed a child from " + T(e._owner.type) + "."), Re(e), _('Each child in a list should have a unique "key" prop.%s%s See https://reactjs.org/link/warning-keys for more information.', t, p), Re(null);
+        e && e._owner && e._owner !== De.current && (p = " It was passed a child from " + T(e._owner.type) + "."), Re(e), x('Each child in a list should have a unique "key" prop.%s%s See https://reactjs.org/link/warning-keys for more information.', t, p), Re(null);
       }
     }
     function Ke(e, r) {
@@ -528,9 +528,9 @@ Check the top-level render call using <` + t + ">.");
         else if (Me(e))
           e._store && (e._store.validated = !0);
         else if (e) {
-          var x = ne(e);
-          if (typeof x == "function" && x !== e.entries)
-            for (var w = x.call(e), R; !(R = w.next()).done; )
+          var b = Y(e);
+          if (typeof b == "function" && b !== e.entries)
+            for (var w = b.call(e), R; !(R = w.next()).done; )
               Me(R.value) && Je(R.value, r);
         }
       }
@@ -545,7 +545,7 @@ Check the top-level render call using <` + t + ">.");
           t = r.propTypes;
         else if (typeof r == "object" && (r.$$typeof === l || // Note: Memo only checks outer props here.
         // Inner props are checked in the reconciler.
-        r.$$typeof === g))
+        r.$$typeof === m))
           t = r.propTypes;
         else
           return;
@@ -554,10 +554,10 @@ Check the top-level render call using <` + t + ">.");
           me(t, e.props, "prop", p, e);
         } else if (r.PropTypes !== void 0 && !Fe) {
           Fe = !0;
-          var x = T(r);
-          _("Component %s declared `PropTypes` instead of `propTypes`. Did you misspell the property assignment?", x || "Unknown");
+          var b = T(r);
+          x("Component %s declared `PropTypes` instead of `propTypes`. Did you misspell the property assignment?", b || "Unknown");
         }
-        typeof r.getDefaultProps == "function" && !r.getDefaultProps.isReactClassApproved && _("getDefaultProps is only used on classic React.createClass definitions. Use a static property named `defaultProps` instead.");
+        typeof r.getDefaultProps == "function" && !r.getDefaultProps.isReactClassApproved && x("getDefaultProps is only used on classic React.createClass definitions. Use a static property named `defaultProps` instead.");
       }
     }
     function hr(e) {
@@ -565,28 +565,28 @@ Check the top-level render call using <` + t + ">.");
         for (var r = Object.keys(e.props), t = 0; t < r.length; t++) {
           var p = r[t];
           if (p !== "children" && p !== "key") {
-            Re(e), _("Invalid prop `%s` supplied to `React.Fragment`. React.Fragment can only have `key` and `children` props.", p), Re(null);
+            Re(e), x("Invalid prop `%s` supplied to `React.Fragment`. React.Fragment can only have `key` and `children` props.", p), Re(null);
             break;
           }
         }
-        e.ref !== null && (Re(e), _("Invalid attribute `ref` supplied to `React.Fragment`."), Re(null));
+        e.ref !== null && (Re(e), x("Invalid attribute `ref` supplied to `React.Fragment`."), Re(null));
       }
     }
     var Xe = {};
-    function ze(e, r, t, p, x, w) {
+    function ze(e, r, t, p, b, w) {
       {
         var R = fe(e);
         if (!R) {
           var E = "";
           (e === void 0 || typeof e == "object" && e !== null && Object.keys(e).length === 0) && (E += " You likely forgot to export your component from the file it's defined in, or you might have mixed up default and named imports.");
-          var z = dr();
-          z ? E += z : E += We();
+          var Q = dr();
+          Q ? E += Q : E += We();
           var S;
-          e === null ? S = "null" : ye(e) ? S = "array" : e !== void 0 && e.$$typeof === i ? (S = "<" + (T(e.type) || "Unknown") + " />", E = " Did you accidentally export a JSX literal instead of a component?") : S = typeof e, _("React.jsx: type is invalid -- expected a string (for built-in components) or a class/function (for composite components) but got: %s.%s", S, E);
+          e === null ? S = "null" : ye(e) ? S = "array" : e !== void 0 && e.$$typeof === i ? (S = "<" + (T(e.type) || "Unknown") + " />", E = " Did you accidentally export a JSX literal instead of a component?") : S = typeof e, x("React.jsx: type is invalid -- expected a string (for built-in components) or a class/function (for composite components) but got: %s.%s", S, E);
         }
-        var F = fr(e, r, t, x, w);
-        if (F == null)
-          return F;
+        var M = fr(e, r, t, b, w);
+        if (M == null)
+          return M;
         if (R) {
           var le = r.children;
           if (le !== void 0)
@@ -596,17 +596,17 @@ Check the top-level render call using <` + t + ">.");
                   Ke(le[_e], e);
                 Object.freeze && Object.freeze(le);
               } else
-                _("React.jsx: Static children should always be an array. You are likely explicitly calling React.jsxs or React.jsxDEV. Use the Babel transform instead.");
+                x("React.jsx: Static children should always be an array. You are likely explicitly calling React.jsxs or React.jsxDEV. Use the Babel transform instead.");
             else
               Ke(le, e);
         }
         if (de.call(r, "key")) {
-          var ge = T(e), re = Object.keys(r).filter(function(_r) {
+          var ge = T(e), ne = Object.keys(r).filter(function(_r) {
             return _r !== "key";
-          }), Ie = re.length > 0 ? "{key: someKey, " + re.join(": ..., ") + ": ...}" : "{key: someKey}";
+          }), Ie = ne.length > 0 ? "{key: someKey, " + ne.join(": ..., ") + ": ...}" : "{key: someKey}";
           if (!Xe[ge + Ie]) {
-            var Rr = re.length > 0 ? "{" + re.join(": ..., ") + ": ...}" : "{}";
-            _(`A props object containing a "key" prop is being spread into JSX:
+            var Rr = ne.length > 0 ? "{" + ne.join(": ..., ") + ": ...}" : "{}";
+            x(`A props object containing a "key" prop is being spread into JSX:
   let props = %s;
   <%s {...props} />
 React keys must be passed directly to JSX without using spread:
@@ -614,7 +614,7 @@ React keys must be passed directly to JSX without using spread:
   <%s key={someKey} {...props} />`, Ie, ge, Rr, ge), Xe[ge + Ie] = !0;
           }
         }
-        return e === o ? hr(F) : pr(F), F;
+        return e === o ? hr(M) : pr(M), M;
       }
     }
     function yr(e, r, t) {
@@ -627,8 +627,8 @@ React keys must be passed directly to JSX without using spread:
     Pe.Fragment = o, Pe.jsx = gr, Pe.jsxs = Er;
   }()), Pe;
 }
-process.env.NODE_ENV === "production" ? $e.exports = br() : $e.exports = wr();
-var f = $e.exports;
+process.env.NODE_ENV === "production" ? Ne.exports = br() : Ne.exports = wr();
+var f = Ne.exports;
 function Tr(a) {
   const i = 12 * (Math.log(a / 440) / Math.log(2));
   return Math.round(i) + 69;
@@ -651,13 +651,13 @@ function Ar(a, i = 44100) {
   for (let n = 1; n < s - 1; n++)
     if (u[n] > o && u[n] > u[n - 1] && u[n] > u[n + 1]) {
       let l = n, h = u[n] / Math.max(...u);
-      const d = i / l, g = Tr(d), m = c[g % 12], j = Math.floor((g - 12) / 12), A = jr(d, g);
+      const d = i / l, m = Tr(d), g = c[m % 12], j = Math.floor((m - 12) / 12), A = jr(d, m);
       v.push({
         frequency: d.toFixed(2),
-        pitch: `${m}${j}`,
+        pitch: `${g}${j}`,
         octave: j,
         confidence: h.toFixed(2),
-        note: m,
+        note: g,
         cents: A
       });
     }
@@ -699,9 +699,9 @@ async function Pr(a, i) {
   const l = v.createAnalyser();
   l.fftSize = i || 2048, n.connect(l), l.connect(v.destination), n.start(), await v.startRendering();
   const h = l.frequencyBinCount, d = new Float32Array(h * Math.ceil(c.duration));
-  for (let m = 0; m < Math.ceil(c.duration); m++)
-    l.getFloatFrequencyData(d.subarray(m * h, (m + 1) * h));
-  return d.some((m) => m !== -1 / 0) ? { dataArray: d, audioDuration: c.duration } : (console.warn("AnalyserNode data contains only -Infinity values. This may indicate an issue with the audio data or configuration."), u);
+  for (let g = 0; g < Math.ceil(c.duration); g++)
+    l.getFloatFrequencyData(d.subarray(g * h, (g + 1) * h));
+  return d.some((g) => g !== -1 / 0) ? { dataArray: d, audioDuration: c.duration } : (console.warn("AnalyserNode data contains only -Infinity values. This may indicate an issue with the audio data or configuration."), u);
 }
 async function kr(a, i, s) {
   const o = i.createBufferSource();
@@ -710,97 +710,97 @@ async function kr(a, i, s) {
   c.fftSize = s;
   const u = c.frequencyBinCount, v = new Float32Array(u);
   return o.connect(c), o.start(), o.playbackRate.value = 10, new Promise((n, l) => {
-    let g = 0;
-    function m() {
-      c.getFloatFrequencyData(v), v.some((A) => A !== -1 / 0) || g >= 20 ? (o.stop(), n({ dataArray: v, audioDuration: a.duration })) : (g++, setTimeout(m, 100));
+    let m = 0;
+    function g() {
+      c.getFloatFrequencyData(v), v.some((A) => A !== -1 / 0) || m >= 20 ? (o.stop(), n({ dataArray: v, audioDuration: a.duration })) : (m++, setTimeout(g, 100));
     }
-    m();
+    g();
   });
 }
-function Ne(a, i = 64, s = !1) {
-  const [o, c] = U(!1), [u, v] = U(!1), [n, l] = U(null), [h, d] = U(null), [g, m] = U(null), [j, A] = U(null), [N, ne] = U(null), [P, _] = U(null), [M, Z] = U(null), [G, Q] = U(null), [te, ae] = U(null), [H, fe] = U(0), [ie, J] = U(0), [T, O] = U(0), [q, B] = U([]), Y = async (y) => {
+function $e(a, i = 64, s = !1) {
+  const [o, c] = U(!1), [u, v] = U(!1), [n, l] = U(null), [h, d] = U(null), [m, g] = U(null), [j, A] = U(null), [q, Y] = U(null), [P, x] = U(null), [I, H] = U(null), [K, ee] = U(null), [te, ae] = U(null), [re, fe] = U(0), [ie, X] = U(0), [T, O] = U(0), [B, V] = U([]), W = async (y) => {
     l(new Audio(await er(y)));
-  }, V = async (y) => {
-    const { dataArray: b, audioDuration: k } = await Pr(y, i);
-    ae(b), fe(k);
-  }, K = () => {
+  }, G = async (y) => {
+    const { dataArray: _, audioDuration: k } = await Pr(y, i);
+    ae(_), fe(k);
+  }, z = () => {
     n != null && (n.play(), c(!0));
   }, oe = () => {
     n != null && (n.pause(), c(!1));
-  }, ee = () => {
+  }, D = () => {
     n != null && (n.ended || n.paused ? (n.play(), c(!0)) : (n.pause(), c(!1)));
   }, C = () => {
     n != null && (n.pause(), n.currentTime = 0, c(!1));
-  }, I = (y) => {
+  }, N = (y) => {
     if (n == null || isNaN(y)) return;
-    const b = y / 100;
-    n.volume = b, O(b * 100);
-  }, D = async () => {
+    const _ = y / 100;
+    n.volume = _, O(_ * 100);
+  }, F = async () => {
     try {
       const y = await navigator.mediaDevices.getUserMedia({ audio: !0 });
-      Z(y);
-      const b = h || new (window.AudioContext || window.webkitAudioContext)();
-      d(b);
-      const k = b.createMediaStreamSource(y);
-      Q(k);
-      const W = b.createAnalyser();
-      _(W), k.connect(W), W.fftSize = i;
-      const ue = W.frequencyBinCount;
-      A(ue), ne(new Uint8Array(ue));
+      H(y);
+      const _ = h || new (window.AudioContext || window.webkitAudioContext)();
+      d(_);
+      const k = _.createMediaStreamSource(y);
+      ee(k);
+      const J = _.createAnalyser();
+      x(J), k.connect(J), J.fftSize = i;
+      const ue = J.frequencyBinCount;
+      A(ue), Y(new Uint8Array(ue));
     } catch (y) {
       console.error("Error capturing microphone audio:", y);
     }
   }, $ = () => {
-    M && (M.getAudioTracks().forEach((y) => y.enabled = !1), v(!0));
-  }, X = () => {
-    M && (M.getAudioTracks().forEach((y) => y.enabled = !0), v(!1));
+    I && (I.getAudioTracks().forEach((y) => y.enabled = !1), v(!0));
+  }, Z = () => {
+    I && (I.getAudioTracks().forEach((y) => y.enabled = !0), v(!1));
   }, L = () => {
-    M && (M.getTracks().forEach((y) => y.stop()), Z(null)), h && (h.close(), d(null), _(null), m(null), Q(null), A(null), ne(null)), s && B([]);
+    I && (I.getTracks().forEach((y) => y.stop()), H(null)), h && (h.close(), d(null), x(null), g(null), ee(null), A(null), Y(null)), s && V([]);
   };
   return se(() => {
-    a !== null && (Y(a), V(a));
+    a !== null && (W(a), G(a));
   }, [a]), se(() => (n !== null && (n.addEventListener("ended", C), O(n.volume * 100), setInterval(() => {
-    J(n.currentTime);
+    X(n.currentTime);
   }, 100)), () => {
     n != null && n.removeEventListener("ended", C);
   }), [n]), se(() => {
     if (!o) return;
-    let y = g, b = P, k = h, W = j;
-    h == null && (k = new (window.AudioContext || window.webkitAudioContext)(), d(k)), g == null && n !== null && (y = k.createMediaElementSource(n), m(y)), P == null && (b = k.createAnalyser(), _(b)), y && (y.connect(b), y.connect(k.destination)), b.fftSize = i, W = b.frequencyBinCount, A(W), ne(new Uint8Array(W));
+    let y = m, _ = P, k = h, J = j;
+    h == null && (k = new (window.AudioContext || window.webkitAudioContext)(), d(k)), m == null && n !== null && (y = k.createMediaElementSource(n), g(y)), P == null && (_ = k.createAnalyser(), x(_)), y && (y.connect(_), y.connect(k.destination)), _.fftSize = i, J = _.frequencyBinCount, A(J), Y(new Uint8Array(J));
   }, [o, a, i]), se(() => {
     const y = () => {
-      if (G == null && !o || u && M !== null) return;
-      P.getByteFrequencyData(N);
-      const b = Ar(N, h.sampleRate);
-      b !== null && B(b), requestAnimationFrame(y);
+      if (K == null && !o || u && I !== null) return;
+      P.getByteFrequencyData(q);
+      const _ = Ar(q, h.sampleRate);
+      _ !== null && V(_), requestAnimationFrame(y);
     };
-    (N !== null || P !== null || h !== null) && s && y();
-  }, [N, o, P, u, h, M, G, s]), {
+    (q !== null || P !== null || h !== null) && s && y();
+  }, [q, o, P, u, h, I, K, s]), {
     audioNode: n,
     audioContext: h,
-    audioSource: g,
+    audioSource: m,
     isPlaying: o,
-    play: K,
+    play: z,
     pause: oe,
-    toggleAudio: ee,
+    toggleAudio: D,
     stopAudio: C,
-    setVolume: I,
+    setVolume: N,
     analyzer: P,
     bufferLength: j,
-    dataArray: N,
+    dataArray: q,
     audioToBase64: er,
-    captureMicrophone: D,
+    captureMicrophone: F,
     muteMicrophone: $,
-    unmuteMicrophone: X,
+    unmuteMicrophone: Z,
     stopMicrophone: L,
-    microphoneSource: G,
-    mediaStream: M,
+    microphoneSource: K,
+    mediaStream: I,
     isMute: u,
     audioFrequencyData: te,
-    audioDuration: H,
+    audioDuration: re,
     audioCurrentTime: ie,
     audioVolume: T,
-    detectedNotes: q
+    detectedNotes: B
   };
 }
 function Le({ width: a, height: i }) {
@@ -823,28 +823,30 @@ function Ue({
   barWidth: l = !1,
   barHeight: h = !1,
   x: d = 0,
-  color: g = "white",
-  colorFunction: m,
+  color: m = "white",
+  colorFunction: g,
   audioDuration: j = 0,
-  type: A
+  type: A,
+  audioNode: q
 }) {
   if (A == "player" && !a || A == "stream" && i || s == null || o == null || c == null || u == null || v == null || !n) return;
   l || (l = u.width / o);
-  function N() {
+  function Y() {
     d = 0, v.clearRect(0, 0, u.width, u.height), s.getByteFrequencyData(c), n({
       barHeight: h,
       barWidth: l,
       canvasContext: v,
       x: d,
-      color: g,
-      colorFunction: m,
+      color: m,
+      colorFunction: g,
       audioDuration: j,
       dataArray: c,
       bufferLength: o,
-      canvasNode: u
-    }), requestAnimationFrame(N);
+      canvasNode: u,
+      audioNode: q
+    }), requestAnimationFrame(Y);
   }
-  N();
+  Y();
 }
 function nr({
   audioFrequencyData: a,
@@ -856,11 +858,12 @@ function nr({
   x: v = 0,
   color: n = "white",
   colorFunction: l,
-  audioDuration: h = 0
+  audioDuration: h = 0,
+  audioNode: d
 }) {
   if (a == null || !o) return;
-  const d = Object.keys(a).length;
-  c || (c = i.width / d), s.clearRect(0, 0, i.width, i.height), o({
+  const m = Object.keys(a).length;
+  c || (c = i.width / m), s.clearRect(0, 0, i.width, i.height), o({
     dataArray: a,
     barHeight: u,
     barWidth: c,
@@ -869,7 +872,8 @@ function nr({
     color: n,
     colorFunction: l,
     audioDuration: h,
-    canvasNode: i
+    canvasNode: i,
+    audioNode: d
   });
 }
 const Sr = {
@@ -975,54 +979,54 @@ function Mr({
   className: l = "",
   controlsClassName: h = "",
   constrolsStyle: d = !1,
-  customVolume: g = !1,
-  volumeLevel: m = !1,
+  customVolume: m = !1,
+  volumeLevel: g = !1,
   enableDuration: j = !1,
   durationClassName: A = "",
-  durationStyle: N = !1,
-  enableCurrentTime: ne = !1,
+  durationStyle: q = !1,
+  enableCurrentTime: Y = !1,
   currentTimeClassName: P = "",
-  currentTimeStyle: _ = !1,
-  hideVolume: M = !0,
-  disableVolume: Z = !1,
-  style: G = !1,
-  canvasClassName: Q = "",
+  currentTimeStyle: x = !1,
+  hideVolume: I = !0,
+  disableVolume: H = !1,
+  style: K = !1,
+  canvasClassName: ee = "",
   canvasStyle: te = !1,
   toggleClassName: ae = "",
-  toggleStyle: H = !1,
+  toggleStyle: re = !1,
   stopButton: fe = !1,
   customStopButton: ie = !1,
-  barWidth: J = !1,
+  barWidth: X = !1,
   barHeight: T = !1,
   horizontalOffset: O = 0,
-  color: q = "black",
-  colorFunction: B = !1,
-  customVisualizer: Y = !1,
-  customFunction: V = !1
+  color: B = "black",
+  colorFunction: V = !1,
+  customVisualizer: W = !1,
+  customFunction: G = !1
 }) {
   const {
-    isPlaying: K,
+    isPlaying: z,
     toggleAudio: oe,
-    audioNode: ee,
+    audioNode: D,
     audioDuration: C,
-    audioCurrentTime: I,
-    setVolume: D,
+    audioCurrentTime: N,
+    setVolume: F,
     audioVolume: $,
-    stopAudio: X,
+    stopAudio: Z,
     audioFrequencyData: L
-  } = Ne(a, n), { Canvas: y, canvasContext: b, canvasNode: k } = Le({
+  } = $e(a, n), { Canvas: y, canvasContext: _, canvasNode: k } = Le({
     width: s,
     height: o
-  }), [W, ue] = U(xe(I || 0)), we = () => {
+  }), [J, ue] = U(xe(N || 0)), we = () => {
     if (ie)
       return be(ie, {
-        onClick: X
+        onClick: Z
       });
   }, Te = ({ className: ce, style: de, volumeClassName: ve, volumeStyle: he, labelClassName: pe, labelStyle: me, labelIndicator: Ee = "%" }) => {
-    if (!g) return;
-    const ye = be(g, {
+    if (!m) return;
+    const ye = be(m, {
       onChange: (Ce) => {
-        D(Ce.target.value);
+        F(Ce.target.value);
       },
       value: $,
       min: 0,
@@ -1032,7 +1036,7 @@ function Mr({
     });
     return /* @__PURE__ */ f.jsxs("div", { className: ce || "", style: de || "", children: [
       ye,
-      m ? /* @__PURE__ */ f.jsxs(
+      g ? /* @__PURE__ */ f.jsxs(
         "p",
         {
           className: pe || "",
@@ -1046,51 +1050,54 @@ function Mr({
     ] });
   };
   return se(() => {
-    Z && D(0), Y ? nr({
+    H && F(0), W ? nr({
       audioFrequencyData: L,
       canvasNode: k,
-      canvasContext: b,
-      color: q,
-      colorFunction: B,
-      barWidth: J,
+      canvasContext: _,
+      color: B,
+      colorFunction: V,
+      barWidth: X,
       barHeight: T,
       x: O,
-      visualizer: Y,
-      audioDuration: C
+      visualizer: W,
+      audioDuration: C,
+      audioNode: D
     }) : Dr({
       dataArray: L,
       canvasNode: k,
-      canvasContext: b,
-      color: q,
-      colorFunction: B,
-      barWidth: J,
+      canvasContext: _,
+      color: B,
+      colorFunction: V,
+      barWidth: X,
       barHeight: T,
       x: O,
-      audioDuration: C
+      audioDuration: C,
+      audioNode: D
     });
   }, [
     L,
     k,
-    b,
-    q,
+    _,
     B,
-    J,
+    V,
+    X,
     T,
     O,
-    Y,
-    Z,
-    D,
-    C
+    W,
+    H,
+    F,
+    C,
+    D
   ]), se(() => {
-    V && V({ audioNode: ee, audioFrequencyData: L, audioDuration: C });
-  }, [V, ee, L, C]), se(() => {
-    I && ue(xe(I || 0));
-  }, [I]), /* @__PURE__ */ f.jsxs("div", { className: l || "", style: G || {}, children: [
+    G && G({ audioNode: D, audioFrequencyData: L, audioDuration: C });
+  }, [G, D, L, C]), se(() => {
+    N && ue(xe(N || 0));
+  }, [N]), /* @__PURE__ */ f.jsxs("div", { className: l || "", style: K || {}, children: [
     /* @__PURE__ */ f.jsx(
       y,
       {
         onClick: i ? oe : null,
-        className: Q || "",
+        className: ee || "",
         style: te || {}
       }
     ),
@@ -1099,34 +1106,34 @@ function Mr({
         "button",
         {
           className: ae || "",
-          style: H || {},
+          style: re || {},
           onClick: oe,
-          children: K ? u : v
+          children: z ? u : v
         }
       ),
-      fe ? /* @__PURE__ */ f.jsx(f.Fragment, { children: ie ? /* @__PURE__ */ f.jsx(we, {}) : /* @__PURE__ */ f.jsx("button", { onClick: X, children: "Stop" }) }) : null,
-      M ? null : /* @__PURE__ */ f.jsx(f.Fragment, { children: g ? /* @__PURE__ */ f.jsx(Te, {}) : /* @__PURE__ */ f.jsxs(f.Fragment, { children: [
+      fe ? /* @__PURE__ */ f.jsx(f.Fragment, { children: ie ? /* @__PURE__ */ f.jsx(we, {}) : /* @__PURE__ */ f.jsx("button", { onClick: Z, children: "Stop" }) }) : null,
+      I ? null : /* @__PURE__ */ f.jsx(f.Fragment, { children: m ? /* @__PURE__ */ f.jsx(Te, {}) : /* @__PURE__ */ f.jsxs(f.Fragment, { children: [
         /* @__PURE__ */ f.jsx("input", { type: "range", min: 0, max: 100, value: $, onChange: (ce) => {
-          D(ce.target.value);
+          F(ce.target.value);
         } }),
-        m ? /* @__PURE__ */ f.jsxs("p", { children: [
+        g ? /* @__PURE__ */ f.jsxs("p", { children: [
           parseInt($).toFixed(0),
           "%"
         ] }) : null
       ] }) }),
-      ne ? /* @__PURE__ */ f.jsx(
+      Y ? /* @__PURE__ */ f.jsx(
         "p",
         {
           className: P || "",
-          style: _ || {},
-          children: W
+          style: x || {},
+          children: J
         }
       ) : null,
       j ? /* @__PURE__ */ f.jsx(
         "p",
         {
           className: A || "",
-          style: N || {},
+          style: q || {},
           children: xe(C || 0)
         }
       ) : null
@@ -1145,8 +1152,8 @@ function tr({
   barHeight: l = !1,
   x: h = 0,
   color: d = "black",
-  colorFunction: g = !1,
-  audioDuration: m = 0,
+  colorFunction: m = !1,
+  audioDuration: g = 0,
   type: j
 }) {
   Ue({
@@ -1162,9 +1169,9 @@ function tr({
     barWidth: n,
     x: h,
     color: d,
-    colorFunction: g,
+    colorFunction: m,
     type: j,
-    audioDuration: m
+    audioDuration: g
   });
 }
 function Ir({
@@ -1179,44 +1186,44 @@ function Ir({
   className: l = "",
   controlsClassName: h = "",
   constrolsStyle: d = !1,
-  customVolume: g = !1,
-  volumeLevel: m = !1,
+  customVolume: m = !1,
+  volumeLevel: g = !1,
   enableDuration: j = !1,
   durationClassName: A = "",
-  durationStyle: N = !1,
-  enableCurrentTime: ne = !1,
+  durationStyle: q = !1,
+  enableCurrentTime: Y = !1,
   currentTimeClassName: P = "",
-  currentTimeStyle: _ = !1,
-  hideVolume: M = !0,
-  disableVolume: Z = !1,
-  style: G = !1,
-  canvasClassName: Q = "",
+  currentTimeStyle: x = !1,
+  hideVolume: I = !0,
+  disableVolume: H = !1,
+  style: K = !1,
+  canvasClassName: ee = "",
   canvasStyle: te = !1,
   toggleClassName: ae = "",
-  toggleStyle: H = !1,
+  toggleStyle: re = !1,
   stopButton: fe = !1,
   customStopButton: ie = !1,
-  barWidth: J = !1,
+  barWidth: X = !1,
   barHeight: T = !1,
   horizontalOffset: O = 0,
-  color: q = "black",
-  colorFunction: B = !1,
-  customVisualizer: Y = !1,
-  customFunction: V = !1
+  color: B = "black",
+  colorFunction: V = !1,
+  customVisualizer: W = !1,
+  customFunction: G = !1
 }) {
   const {
-    isPlaying: K,
+    isPlaying: z,
     toggleAudio: oe,
-    analyzer: ee,
+    analyzer: D,
     bufferLength: C,
-    dataArray: I,
-    audioDuration: D,
+    dataArray: N,
+    audioDuration: F,
     audioCurrentTime: $,
-    setVolume: X,
+    setVolume: Z,
     audioVolume: L,
     stopAudio: y,
-    audioNode: b
-  } = Ne(a, n), { Canvas: k, canvasContext: W, canvasNode: ue } = Le({
+    audioNode: _
+  } = $e(a, n), { Canvas: k, canvasContext: J, canvasNode: ue } = Le({
     width: s,
     height: o
   }), [we, Te] = U(xe($ || 0)), ce = () => {
@@ -1225,10 +1232,10 @@ function Ir({
         onClick: y
       });
   }, de = ({ className: ve, style: he, volumeClassName: pe, volumeStyle: me, labelClassName: Ee, labelStyle: ye, labelIndicator: Ce = "%" }) => {
-    if (!g) return;
-    const Se = be(g, {
+    if (!m) return;
+    const Se = be(m, {
       onChange: (ke) => {
-        X(ke.target.value);
+        Z(ke.target.value);
       },
       value: L,
       min: 0,
@@ -1238,7 +1245,7 @@ function Ir({
     });
     return /* @__PURE__ */ f.jsxs("div", { className: ve || "", style: he || "", children: [
       Se,
-      m ? /* @__PURE__ */ f.jsxs(
+      g ? /* @__PURE__ */ f.jsxs(
         "p",
         {
           className: Ee || "",
@@ -1252,62 +1259,65 @@ function Ir({
     ] });
   };
   return se(() => {
-    Z && X(0), Y ? Ue({
-      isPlaying: K,
-      analyzer: ee,
+    H && Z(0), W ? Ue({
+      isPlaying: z,
+      analyzer: D,
       bufferLength: C,
-      dataArray: I,
+      dataArray: N,
       canvasNode: ue,
-      canvasContext: W,
-      color: q,
-      colorFunction: B,
-      barWidth: J,
+      canvasContext: J,
+      color: B,
+      colorFunction: V,
+      barWidth: X,
       barHeight: T,
       x: O,
-      visualizer: Y,
+      visualizer: W,
       type: "player",
-      audioDuration: D
+      audioDuration: F,
+      audioNode: _
     }) : tr({
-      isPlaying: K,
-      analyzer: ee,
+      isPlaying: z,
+      analyzer: D,
       bufferLength: C,
-      dataArray: I,
+      dataArray: N,
       canvasNode: ue,
-      canvasContext: W,
-      color: q,
-      colorFunction: B,
-      barWidth: J,
+      canvasContext: J,
+      color: B,
+      colorFunction: V,
+      barWidth: X,
       barHeight: T,
       x: O,
       type: "player",
-      audioDuration: D
+      audioDuration: F,
+      audioNode: _
     });
   }, [
-    K,
-    ee,
+    z,
+    D,
     C,
-    I,
+    N,
     ue,
-    W,
-    q,
-    B,
     J,
+    B,
+    V,
+    X,
     T,
     O,
-    Y,
+    W,
+    H,
     Z,
-    X,
-    D
+    F,
+    _
   ]), se(() => {
-    V && V({ audioNode: b, audioDuration: D, dataArray: I, bufferLength: C });
-  }, [V, b, D, I, C]), se(() => {
+    G && G({ audioNode: _, audioDuration: F, dataArray: N, bufferLength: C });
+  }, [G, _, F, N, C]), se(() => {
     $ && Te(xe($ || 0));
-  }, [$]), /* @__PURE__ */ f.jsxs("div", { className: l || "", style: G || {}, children: [
+  }, [$]), /* @__PURE__ */ f.jsxs("div", { className: l || "", style: K || {}, children: [
     /* @__PURE__ */ f.jsx(
       k,
       {
         onClick: i ? oe : null,
-        className: Q || "",
+        className: ee || "",
         style: te || {}
       }
     ),
@@ -1316,26 +1326,26 @@ function Ir({
         "button",
         {
           className: ae || "",
-          style: H || {},
+          style: re || {},
           onClick: oe,
-          children: K ? u : v
+          children: z ? u : v
         }
       ),
       fe ? /* @__PURE__ */ f.jsx(f.Fragment, { children: ie ? /* @__PURE__ */ f.jsx(ce, {}) : /* @__PURE__ */ f.jsx("button", { onClick: y, children: "Stop" }) }) : null,
-      M ? null : /* @__PURE__ */ f.jsx(f.Fragment, { children: g ? /* @__PURE__ */ f.jsx(de, {}) : /* @__PURE__ */ f.jsxs(f.Fragment, { children: [
+      I ? null : /* @__PURE__ */ f.jsx(f.Fragment, { children: m ? /* @__PURE__ */ f.jsx(de, {}) : /* @__PURE__ */ f.jsxs(f.Fragment, { children: [
         /* @__PURE__ */ f.jsx("input", { type: "range", min: 0, max: 100, value: L, onChange: (ve) => {
-          X(ve.target.value);
+          Z(ve.target.value);
         } }),
-        m ? /* @__PURE__ */ f.jsxs("p", { children: [
+        g ? /* @__PURE__ */ f.jsxs("p", { children: [
           parseInt(L).toFixed(0),
           "%"
         ] }) : null
       ] }) }),
-      ne ? /* @__PURE__ */ f.jsx(
+      Y ? /* @__PURE__ */ f.jsx(
         "p",
         {
           className: P || "",
-          style: _ || {},
+          style: x || {},
           children: we
         }
       ) : null,
@@ -1343,14 +1353,14 @@ function Ir({
         "p",
         {
           className: A || "",
-          style: N || {},
-          children: xe(D || 0)
+          style: q || {},
+          children: xe(F || 0)
         }
       ) : null
     ] }) : null
   ] });
 }
-function $r({
+function Nr({
   clickableCanvas: a = !1,
   width: i = 500,
   height: s = 100,
@@ -1362,107 +1372,110 @@ function $r({
   controlsClassName: l = "",
   constrolsStyle: h = !1,
   style: d = !1,
-  canvasClassName: g = "",
-  canvasStyle: m = !1,
+  canvasClassName: m = "",
+  canvasStyle: g = !1,
   toggleClassName: j = "",
   toggleStyle: A = !1,
-  stopButton: N = !0,
-  customStopButton: ne = !1,
+  stopButton: q = !0,
+  customStopButton: Y = !1,
   startButton: P = !0,
-  customStartButton: _ = !1,
-  barWidth: M = !1,
-  barHeight: Z = !1,
-  horizontalOffset: G = 0,
-  color: Q = "black",
+  customStartButton: x = !1,
+  barWidth: I = !1,
+  barHeight: H = !1,
+  horizontalOffset: K = 0,
+  color: ee = "black",
   colorFunction: te = !1,
   customVisualizer: ae = !1,
-  customFunction: H = !1
+  customFunction: re = !1
 }) {
   const [fe, ie] = U(!0), {
-    captureMicrophone: J,
+    captureMicrophone: X,
     isMute: T,
     muteMicrophone: O,
-    unmuteMicrophone: q,
-    stopMicrophone: B,
-    analyzer: Y,
-    bufferLength: V,
-    dataArray: K,
+    unmuteMicrophone: B,
+    stopMicrophone: V,
+    analyzer: W,
+    bufferLength: G,
+    dataArray: z,
     audioNode: oe,
-    microphoneSource: ee,
+    microphoneSource: D,
     mediaStream: C
-  } = Ne(null, v), { Canvas: I, canvasContext: D, canvasNode: $ } = Le({
+  } = $e(null, v), { Canvas: N, canvasContext: F, canvasNode: $ } = Le({
     width: i,
     height: s
-  }), X = () => {
-    if (ne)
-      return be(ne, {
-        onClick: B
+  }), Z = () => {
+    if (Y)
+      return be(Y, {
+        onClick: V
       });
   }, L = () => {
-    if (_)
-      return be(_, {
-        onClick: J
+    if (x)
+      return be(x, {
+        onClick: X
       });
   };
   se(() => {
     ae ? Ue({
       isMute: T,
-      analyzer: Y,
-      bufferLength: V,
-      dataArray: K,
+      analyzer: W,
+      bufferLength: G,
+      dataArray: z,
       canvasNode: $,
-      canvasContext: D,
-      color: Q,
+      canvasContext: F,
+      color: ee,
       colorFunction: te,
-      barWidth: M,
-      barHeight: Z,
-      x: G,
+      barWidth: I,
+      barHeight: H,
+      x: K,
       visualizer: ae,
-      type: "stream"
+      type: "stream",
+      audioNode: D
     }) : tr({
       isMute: T,
-      analyzer: Y,
-      bufferLength: V,
-      dataArray: K,
+      analyzer: W,
+      bufferLength: G,
+      dataArray: z,
       canvasNode: $,
-      canvasContext: D,
-      color: Q,
+      canvasContext: F,
+      color: ee,
       colorFunction: te,
-      barWidth: M,
-      barHeight: Z,
-      x: G,
-      type: "stream"
+      barWidth: I,
+      barHeight: H,
+      x: K,
+      type: "stream",
+      audioNode: D
     });
   }, [
     T,
-    Y,
-    V,
-    K,
-    $,
-    D,
-    Q,
-    te,
-    M,
-    Z,
+    W,
     G,
-    ae
+    z,
+    $,
+    F,
+    ee,
+    te,
+    I,
+    H,
+    K,
+    ae,
+    D
   ]), se(() => {
-    H && H({ audioNode: oe, microphoneSource: ee, mediaStream: C });
-  }, [H, oe, ee, C]);
+    re && re({ audioNode: oe, microphoneSource: D, mediaStream: C });
+  }, [re, oe, D, C]);
   const y = () => {
-    ie(!fe), !fe ? q() : O();
+    ie(!fe), !fe ? B() : O();
   };
   return /* @__PURE__ */ f.jsxs("div", { className: n || "", style: d || {}, children: [
     /* @__PURE__ */ f.jsx(
-      I,
+      N,
       {
         onClick: a ? y : null,
-        className: g || "",
-        style: m || {}
+        className: m || "",
+        style: g || {}
       }
     ),
     o ? /* @__PURE__ */ f.jsxs("div", { className: l || "", style: h || {}, children: [
-      P ? /* @__PURE__ */ f.jsx(f.Fragment, { children: _ ? /* @__PURE__ */ f.jsx(L, {}) : /* @__PURE__ */ f.jsx("button", { onClick: J, children: "Start" }) }) : null,
+      P ? /* @__PURE__ */ f.jsx(f.Fragment, { children: x ? /* @__PURE__ */ f.jsx(L, {}) : /* @__PURE__ */ f.jsx("button", { onClick: X, children: "Start" }) }) : null,
       /* @__PURE__ */ f.jsx(
         "button",
         {
@@ -1472,17 +1485,17 @@ function $r({
           children: T ? u : c
         }
       ),
-      N ? /* @__PURE__ */ f.jsx(f.Fragment, { children: ne ? /* @__PURE__ */ f.jsx(X, {}) : /* @__PURE__ */ f.jsx("button", { onClick: B, children: "Stop" }) }) : null
+      q ? /* @__PURE__ */ f.jsx(f.Fragment, { children: Y ? /* @__PURE__ */ f.jsx(Z, {}) : /* @__PURE__ */ f.jsx("button", { onClick: V, children: "Stop" }) }) : null
     ] }) : null
   ] });
 }
 export {
   Mr as Audio,
   Ir as AudioPlayer,
-  $r as AudioStream,
+  Nr as AudioStream,
   Or as animation_visuals,
   Ar as detectNote,
   Sr as static_visuals,
-  Ne as useAudio,
+  $e as useAudio,
   Le as useCanvas
 };
