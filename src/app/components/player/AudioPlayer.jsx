@@ -18,6 +18,11 @@ export default function AudioPlayer({
   controlsClassName = "",
   constrolsStyle = false,
   customVolume = false,
+  volumeControlStyle = {},
+  volumeControlClassName = "",
+  volumeLabelStyle = {},
+  volumeLabelClassName = "",
+  volumeLabelIndicator = "%",
   volumeLevel = false,	
   enableDuration = false,
   durationClassName = "",
@@ -68,27 +73,27 @@ export default function AudioPlayer({
 	  });
 	};
 
-  const CustomVolume = ({className, style, volumeClassName, volumeStyle, labelClassName, labelStyle, labelIndicator="%"}) => {
+  const CustomVolume = () => {
     	if(!customVolume) return;
 	const Volume = cloneElement(customVolume, {
 	  	onChange: (e) =>{ setVolume(e.target.value) },
 	  	value: audioVolume,
 	  	min: 0,
 	  	max: 100,
-	  	className: volumeClassName ? volumeClassName : "",
-	  	style: volumeStyle ? volumeStyle : {},
 	  });
     	return (
-	  <div className={className ? className : ""} style={style ? style : ""}>
+	  <div className={volumeControlClassName ? volumeControlClassName : ""} 
+	  style={volumeControlStyle ? volumeControlStyle : ""}>
 		{Volume}
 		 {volumeLevel ? (
 		  <p 
-		   className={labelClassName ? labelClassName : ""} 
-		   style={labelStyle ? labelStyle : {}}>{parseInt(audioVolume).toFixed(0)}{labelIndicator}</p>
+		   className={volumeLabelClassName ? volumeLabelClassName : ""} 
+		   style={volumeLabelStyle ? volumeLabelStyle : {}}>{parseInt(audioVolume).toFixed(0)}{volumeLabelIndicator}</p>
 		 ) :  null}
 	  </div>
 	)
       };
+
 
 
   useEffect(() => {
